@@ -1,0 +1,371 @@
+html, body{
+  height: 100%;
+}
+
+body {
+  margin: 20px 10px;
+}
+
+/* Start by setting display:none to make this hidden.
+   Then we position it in relation to the viewport window
+   with position:fixed. Width, height, top and left speak
+   for themselves. Background we set to 80% white with
+   our animation centered, and no-repeating */
+.modal {
+display:    none;
+position:   fixed;
+z-index:    1000;
+top:        0;
+left:       0;
+height:     100%;
+width:      100%;
+background: rgba( 255, 255, 255, .8 ) 
+            url('cat.gif') 
+            50% 50% 
+            no-repeat;
+}
+
+/* When the body has the loading class, we turn
+   the scrollbar off with overflow:hidden */
+body.loading .modal {
+    overflow: hidden;   
+}
+
+/* Anytime the body has the loading class, our
+   modal element will be visible */
+body.loading .modal {
+    display: block;
+}
+
+.question {
+  position: relative;
+  cursor: pointer;
+}
+
+
+.edit-q {
+  display: none;
+}
+
+.edit-a {
+  display: none;
+}
+
+.edit-t {
+  display: none;
+}
+
+.answers {
+  position: relative;
+}
+
+.visible {
+  display: block;
+}
+
+#q {
+  max-width: 200px;
+}
+
+#test {
+  max-width: 200px;
+}
+
+.btn {
+  border: 1px solid #ccc;
+  /* border-radius: 5px; */
+  padding: 6px 12px;
+  margin: 5px;
+  text-decoration: none;
+  /* background: #dcdcdc linear-gradient(#fff, #dcdcdc); */
+  color: #000;
+  cursor: pointer;
+  transition: all .3s;
+}
+
+.btn-rem-t, .btn-rem {
+  background-color: #ff7d7d;
+  color: #fff;
+}
+
+.question {
+  margin: 5px 5px 5px 0;
+  font-size: 18px;
+  font-weight: bold;
+}
+
+.question:hover {
+  text-decoration: underline;
+}
+
+.answers {
+  font-size: 18px;
+}
+
+.answers img{
+  max-width: 50%;
+}
+
+.answers ul li {
+  cursor: pointer;
+  list-style-type: none;
+}
+
+li.answer:hover {
+  text-decoration: underline;
+}
+
+.testname {
+  margin: 5px 5px 5px 0;
+  font-size: 18px;
+  font-weight: bold;
+}
+
+.testname:hover {
+  cursor: pointer;
+  text-decoration: underline;
+}
+
+.q-wrapper {
+  display: none;
+}
+
+.ans-wrapper, .q-wrapper {
+  position: relative;
+  border: 1px dotted gray;
+  margin: 5px 5px 5px 0;
+  padding: 5px 65px 0 10px;
+}
+
+.ok {
+  border: 1px dotter #adc092;
+  background: #f0faf1;
+  color: #58715e;
+}
+
+.center {
+  display: block;
+  margin: auto;
+  text-align: center;
+}
+
+.test-status {
+  display: none;
+}
+
+.success {
+  color: rgb(6, 80, 6);
+}
+
+.enabled {
+  color: rgb(25, 197, 25);
+  font-weight: bold;
+}
+
+.disabled {
+  color: #ff0000;
+  font-weight: bold;
+}
+
+#rem-btn-t {
+  display: none;
+}
+
+.authform {
+  text-align: center;
+}
+
+.authform input {
+  display: block;
+  margin: 5px auto;
+  height: 38px;
+  padding: 0 36px;
+}
+
+*,*:focus,*:hover{
+  outline:none;
+}
+
+.grandParentContaniner {
+  display: table; 
+  height:100%; 
+  margin: 0 auto;
+}
+
+.parentContainer {
+  display: table-cell;
+  vertical-align: middle;
+}
+
+input {
+  border: 1px solid rgb(198, 208, 215);
+}
+
+input:focus {
+  border-color: #2fa3e7;
+  border-width: 1px;
+  box-shadow: inset 0 1px 1px rgb(239 243 246 / 50%), 0 0 4px rgb(47 163 231 / 60%);
+}
+
+textarea:focus {
+  border-color: #2fa3e7;
+  border-width: 1px;
+  box-shadow: inset 0 1px 1px rgb(239 243 246 / 50%), 0 0 4px rgb(47 163 231 / 60%);
+}
+
+.input-icon {
+  width: 300px;
+  height: 38px;
+  margin: 15px auto;
+}
+
+.input-icon.input-icon-left.icon-password i{
+  background-image: url(lock.png);
+}
+
+.input-icon-left.icon-login i {
+  background-image: url(user.png);
+}
+
+.input-icon-left i {
+  cursor: pointer;
+  position: relative;
+  /* position: absolute; */
+  display: block;
+  left: 40px;
+  top: -35px;
+  background-repeat: no-repeat;
+  background-position: 50%;
+  background-size: 16px 16px;
+  width: 16px;
+  height: 16px;
+}
+
+.info {
+  margin: 10px 0;
+  border: 1px dotter #adc092;
+  background: #f0faf1;
+  color: #015815;
+}
+
+#submit-id {
+  display: none;
+  margin-bottom: 20px;
+}
+
+.quantity-status {
+  display: none;
+}
+
+#all_q_count {
+  cursor: pointer;
+}
+
+#all_q_count:hover {
+  text-decoration: underline;
+}
+
+.remove-answer, .remove-question {
+  cursor: pointer;
+  position: absolute;
+  top: 9px;
+  right: 11px;
+  color: #ff7d7d;
+}
+
+.img-container {
+  position: relative;
+}
+
+.fa-close::before, .fa-remove:before {
+  cursor: pointer;
+  position: absolute;
+  top: 0;
+  margin-left: 5px;
+  color: #ff7d7d;
+}
+
+.fa-edit:before, .fa-pencil-square-o:before {
+  cursor: pointer;
+  position: absolute;
+  right: 35px;
+  top: 10px;
+}
+
+.fa-plus:before {
+  cursor: pointer;
+  content: "\f067";
+  font-size: 35px;
+  color: green;
+}
+
+.add-question {
+  display: none;
+  position: absolute;
+  bottom: -35px;
+}
+
+.add-answer {
+  display: none;
+  position: absolute;
+  bottom: -35px;
+}
+
+#qr_link {
+  display: none;
+}
+
+.qr_form {
+  display: none;
+  position: relative;
+}
+
+.submit {
+  position: absolute;
+  top: -19px;
+  left: 210px;
+}
+
+#q-level {
+  position: absolute;
+  top: 9px;
+  right: 66px;
+}
+
+.complexity, .complexity-check {
+  display: none;
+}
+
+.complexity span {
+  margin-right: 10px;
+}
+
+.complexity-options {
+  display: none;
+}
+
+.radio-2-select {
+  display: none;
+}
+
+.radio-1-form {
+  display: none;
+}
+
+.complexity-info {
+  display: none;
+}
+
+@media only screen and (max-width: 600px) {
+  /* For mobile phones: */
+  .btn-rem, .btn-img {
+    display: block;
+    float: none;
+    margin: 10px auto;
+  }
+
+  .radio-1-form label{
+    display: block;
+    margin-bottom: 5px;
+  }
+}

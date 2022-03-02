@@ -1,0 +1,369 @@
+* {margin: 0; padding: 0;}
+
+*,*:focus,*:hover{
+  outline:none;
+}
+
+body {
+  overflow-x: hidden;
+}
+
+/* Start by setting display:none to make this hidden.
+Then we position it in relation to the viewport window
+with position:fixed. Width, height, top and left speak
+for themselves. Background we set to 80% white with
+our animation centered, and no-repeating */
+.modal_wait {
+  display:    none;
+  position:   fixed;
+  z-index:    1000;
+  top:        0;
+  left:       0;
+  height:     100%;
+  width:      100%;
+  background: rgb( 255, 255, 255) 
+              url('wait.gif') 
+              50% 50% 
+              no-repeat;
+  }
+  
+  /* When the body has the loading class, we turn
+      the scrollbar off with overflow:hidden */
+  body.loading .modal_wait {
+      overflow: hidden;   
+  }
+  
+  /* Anytime the body has the loading class, our
+      modal element will be visible */
+  body.loading .modal_wait {
+      display: block;
+  }
+
+.wrap {
+  width: 100%;
+  margin: auto;
+}
+
+.test-data {
+  border: 10px solid #f3f3f3;
+  padding: 10px;
+  margin: 0 0 20px 0;
+}
+
+.q {
+  border-bottom: 1px solid #000;
+  font-weight: bold;
+  margin-bottom: 15px;
+}
+
+.a {
+  padding: 5px 0;
+  margin: 5px 5px;
+  display: inline-block;
+}
+
+.a-img > img {
+  display: inline-block;
+  max-width: 100%;
+}
+
+.q-img > img {
+  display: block;
+  max-width: 100%;
+  margin: 0 auto;
+}
+
+.question {
+  display: none;
+}
+
+.count-q {
+  text-align: center;
+  margin: 20px auto;
+}
+
+.pagination {
+  width: 100%;
+  text-align: center;
+  padding: 10px;
+}
+
+.pagination ul{
+  width: 100%;
+  padding: 0px;
+  margin: 0px;
+}
+
+.pagination ul li {
+  display: inline-block;
+  list-style: none;
+  margin: 5px 3px;
+  font-size: 18px;
+  text-align: center;
+}
+
+.pagination ul li a, .pagination ul li i {
+  display:block;
+  border: 1px solid #ddd;
+  border-radius: 50%;
+  text-align: center;
+  padding: 5px 5px;
+  text-decoration: none;
+  background: #fff;
+  color: #428bca;
+  height: 25px;
+  width: 25px;
+  line-height: 25px;
+  top: -1px;
+  cursor: pointer;
+}
+
+.pagination ul li a:hover {
+  background: #eee;
+}
+
+.pagination ul li a.visited {
+  background: #eee;
+}
+
+.pagination ul li a.not-answered {
+  background: rgb(238, 255, 0);
+}
+
+.pagination ul li a.answered {
+  background: rgba(144, 255, 59, 0.32);
+}
+
+.pagination ul li > a.nav-active {
+  background: #428bca;
+  color: #fff;
+  border-color: #428bca;
+  cursor: default;
+}
+
+.pagination ul li i.nav-disabled {
+  display: none;
+}
+
+.pagination ul li i.nav-disabled:hover {
+  background: #fff;
+}
+
+.center {
+  display: block;
+  margin: auto;
+  text-align: center;
+}
+
+button.btn {
+  border: 1px solid #ccc;
+  /* border-radius: 5px; */
+  padding: 16px 32px;
+  text-decoration: none;
+  /* background: #dcdcdc linear-gradient(#fff, #dcdcdc); */
+  color: #000;
+  cursor: pointer;
+  transition: all .3s;
+  margin-bottom: 20px;
+}
+
+button.btn:hover {
+  /* background: #dcdcdc linear-gradient(#dcdcdc, #fff); */
+  box-shadow: 0 0 2px #aaa;
+}
+
+.none {
+  display: none;
+}
+
+.count-res {
+  margin: 0 0 20px 5px;
+  border-bottom: 1px dotted #ccc;
+}
+
+.question-res {
+  margin: 0 0 10px 0;
+  padding: 5px;
+  border: 1px dotted #ccc;
+}
+
+.ok {
+  border: 1px dotter #adc092;
+  background: #f0faf1;
+  color: #58715e;
+}
+
+.error {
+  border: 1px dotter #ddb1b1;
+  background: #ffeded;
+  color: #7f5354;
+}
+
+.ok2 {
+  color: rgb(6, 80, 6);
+  font-weight: bold;
+}
+
+.error2 {
+  text-decoration: line-through;
+  color: #ff0000;
+  font-weight: bold;
+}
+
+.green {
+  color: rgb(23, 194, 23);
+  font-weight: bold;
+}
+
+.red {
+  color: #ff0000;
+  font-weight: bold;
+}
+
+.countdown {
+  margin: 10px auto;
+  text-align: center;
+}
+
+.result-table {
+  border: 1px dotted black;
+  border-collapse:collapse;
+  margin: 20px auto;
+}
+
+.result-table td,th {
+  border: 1px dotted black;
+  padding: 5px;
+  text-align: center;
+}
+
+.sirname {
+  cursor: pointer;
+  text-align: left;
+}
+
+#student_name {
+  margin: 10px 5px;
+  padding: 10px;
+  height: 30px;
+}
+
+#student_group {
+  margin: 10px 5px;
+  padding: 10px;
+  height: 30px;
+}
+
+input {
+  border: 1px solid rgb(198, 208, 215);
+}
+
+input:focus {
+  border-color: #2fa3e7;
+  border-width: 1px;
+  box-shadow: inset 0 1px 1px rgb(239 243 246 / 50%), 0 0 4px rgb(47 163 231 / 60%);
+}
+
+#select_date {
+  margin: 10px 5px;
+  height: 30px;
+}
+
+#select_test {
+  max-width: 97%;
+  margin: 5px;
+  height: 25px;
+}
+
+.testname {
+  font-size: 18px;
+}
+
+.validity-info {
+  position: relative;
+  top: 40px;
+  left: -200px;
+}
+
+.container {
+  margin-bottom: 5px;
+}
+
+label {
+  margin-right: 5px;
+}
+
+.res_header, .test_name {
+  font-size: 18px;
+  margin-bottom: 10px;
+}
+
+@media only screen and (max-width: 600px) {
+  /* For mobile phones: */
+  .wrap {
+    width: 100%;
+    font-size: 18px;
+    padding: 0;
+  }
+
+  #student_name {
+    width: 90%;
+    margin: 2px 5px;
+    height: 10px;
+    border-radius: 5px;
+  }
+
+  #student_group {
+    width: 90%;
+    margin: 2px 5px;
+    height: 10px;
+    border-radius: 5px;
+  }
+
+  .pagination ul li a {
+    display: none;
+  }
+
+  .pagination {
+    display: block;
+    position: relative;
+    top: 5px;
+    left: 30px;
+    padding: 0;
+  }
+
+  .pagination ul li i {
+    width: 10px;
+    height: 12px;
+    line-height: 12px;
+    padding: 15px 18px;
+}
+
+  .nav-prev {
+    position: absolute;
+    left: -25px;
+  }
+
+  .nav-next {
+    position: absolute;
+    right: 35px;
+  }
+
+  .test-data {
+    border: none;
+  }
+
+  .count-q {
+    margin: 0;
+  }
+}
+
+@media print{
+  @page {
+    size: 21cm 29.7cm;
+    margin: 20mm 10mm 20mm 20mm; /* change the margins as you want them to be. */
+  }
+
+.container, #auth_text { display: none; }
+thead { page-break-before: always; }
+}
